@@ -103,12 +103,12 @@ import net.runelite.http.api.chat.LayoutRoom;
 import net.runelite.http.api.ws.messages.party.PartyChatMessage;
 
 @PluginDescriptor(
-	name = "Chambers Of Xeric",
+	name = "CoX Scouter External",
 	description = "Show helpful information for the Chambers of Xeric raid",
 	tags = {"combat", "raid", "overlay", "pve", "pvm", "bosses", "cox"}
 )
 @Slf4j
-public class RaidsPlugin extends Plugin
+public class CoxScouterExternalPlugin extends Plugin
 {
 	private static final int LOBBY_PLANE = 3;
 	private static final int SECOND_FLOOR_PLANE = 2;

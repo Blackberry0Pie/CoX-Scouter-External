@@ -30,8 +30,8 @@ import net.runelite.client.config.ConfigItem;
 import net.runelite.client.config.Keybind;
 import net.runelite.client.util.ImageUploadStyle;
 
-@ConfigGroup("raids")
-public interface RaidsConfig extends Config
+@ConfigGroup("coxscouterexternal")
+public interface CoxScouterExternalConfig extends Config
 {
 	@ConfigItem(
 		position = 0,
