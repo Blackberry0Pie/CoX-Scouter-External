@@ -22,14 +22,14 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package net.runelite.client.plugins.raids;
+package bbp.chambers;
 
 import java.util.ArrayList;
 import java.util.List;
 import lombok.Getter;
 import net.runelite.api.coords.WorldPoint;
-import net.runelite.client.plugins.raids.solver.Layout;
-import net.runelite.client.plugins.raids.solver.Room;
+import bbp.chambers.solver.Layout;
+import bbp.chambers.solver.Room;
 
 class Raid
 {

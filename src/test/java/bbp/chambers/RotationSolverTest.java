@@ -22,17 +22,17 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package net.runelite.client.plugins.raids;
+package bbp.chambers;
 
-import static net.runelite.client.plugins.raids.RaidRoom.GUARDIANS;
-import static net.runelite.client.plugins.raids.RaidRoom.MUTTADILES;
-import static net.runelite.client.plugins.raids.RaidRoom.MYSTICS;
-import static net.runelite.client.plugins.raids.RaidRoom.SHAMANS;
-import static net.runelite.client.plugins.raids.RaidRoom.TEKTON;
-import static net.runelite.client.plugins.raids.RaidRoom.UNKNOWN_COMBAT;
-import static net.runelite.client.plugins.raids.RaidRoom.VANGUARDS;
-import static net.runelite.client.plugins.raids.RaidRoom.VASA;
-import static net.runelite.client.plugins.raids.RaidRoom.VESPULA;
+import static bbp.chambers.RaidRoom.GUARDIANS;
+import static bbp.chambers.RaidRoom.MUTTADILES;
+import static bbp.chambers.RaidRoom.MYSTICS;
+import static bbp.chambers.RaidRoom.SHAMANS;
+import static bbp.chambers.RaidRoom.TEKTON;
+import static bbp.chambers.RaidRoom.UNKNOWN_COMBAT;
+import static bbp.chambers.RaidRoom.VANGUARDS;
+import static bbp.chambers.RaidRoom.VASA;
+import static bbp.chambers.RaidRoom.VESPULA;
 import static org.junit.Assert.assertArrayEquals;
 import org.junit.Test;
 
