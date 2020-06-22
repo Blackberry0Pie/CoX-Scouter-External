@@ -49,15 +49,15 @@ import net.runelite.http.api.worlds.World;
 import net.runelite.http.api.worlds.WorldRegion;
 import net.runelite.http.api.worlds.WorldResult;
 
-public class RaidsOverlay extends OverlayPanel
+public class CoxScouterExternalOverlay extends OverlayPanel
 {
 	private static final int OLM_PLANE = 0;
 	static final String BROADCAST_ACTION = "Broadcast layout";
 	static final String SCREENSHOT_ACTION = "Screenshot";
 
 	private Client client;
-	private RaidsPlugin plugin;
-	private RaidsConfig config;
+	private CoxScouterExternalPlugin plugin;
+	private CoxScouterExternalConfig config;
 
 	@Getter
 	private boolean scoutOverlayShown = false;
@@ -66,7 +66,7 @@ public class RaidsOverlay extends OverlayPanel
 	private WorldService worldService;
 
 	@Inject
-	private RaidsOverlay(Client client, RaidsPlugin plugin, RaidsConfig config)
+	private CoxScouterExternalOverlay(Client client, CoxScouterExternalPlugin plugin, CoxScouterExternalConfig config)
 	{
 		super(plugin);
 		setPosition(OverlayPosition.TOP_LEFT);

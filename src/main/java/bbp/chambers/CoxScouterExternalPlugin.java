@@ -138,13 +138,13 @@ public class CoxScouterExternalPlugin extends Plugin
 	private Client client;
 
 	@Inject
-	private RaidsConfig config;
+	private CoxScouterExternalConfig config;
 
 	@Inject
 	private OverlayManager overlayManager;
 
 	@Inject
-	private RaidsOverlay overlay;
+	private CoxScouterExternalOverlay overlay;
 
 	@Inject
 	private LayoutSolver layoutSolver;
@@ -214,15 +214,15 @@ public class CoxScouterExternalPlugin extends Plugin
 	private boolean loggedIn;
 
 	@Provides
-	RaidsConfig provideConfig(ConfigManager configManager)
+	CoxScouterExternalConfig provideConfig(ConfigManager configManager)
 	{
-		return configManager.getConfig(RaidsConfig.class);
+		return configManager.getConfig(CoxScouterExternalConfig.class);
 	}
 
 	@Override
 	public void configure(Binder binder)
 	{
-		binder.bind(RaidsOverlay.class);
+		binder.bind(CoxScouterExternalOverlay.class);
 	}
 
 	@Override
@@ -249,7 +249,7 @@ public class CoxScouterExternalPlugin extends Plugin
 	@Subscribe
 	public void onConfigChanged(ConfigChanged event)
 	{
-		if (!event.getGroup().equals("raids"))
+		if (!event.getGroup().equals("coxscouterexternal"))
 		{
 			return;
 		}
@@ -402,11 +402,11 @@ public class CoxScouterExternalPlugin extends Plugin
 			return;
 		}
 
-		if (event.getEntry().getOption().equals(RaidsOverlay.BROADCAST_ACTION))
+		if (event.getEntry().getOption().equals(CoxScouterExternalOverlay.BROADCAST_ACTION))
 		{
 			sendRaidLayoutMessage();
 		}
-		else if (event.getEntry().getOption().equals(RaidsOverlay.SCREENSHOT_ACTION))
+		else if (event.getEntry().getOption().equals(CoxScouterExternalOverlay.SCREENSHOT_ACTION))
 		{
 			screenshotScoutOverlay();
 		}
