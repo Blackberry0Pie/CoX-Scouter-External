@@ -34,7 +34,7 @@ import lombok.extern.slf4j.Slf4j;
 import net.runelite.api.ChatMessageType;
 import net.runelite.api.Client;
 import net.runelite.api.GameState;
-import net.runelite.api.ItemID;
+import net.runelite.api.gameval.ItemID;
 import net.runelite.api.MenuAction;
 import net.runelite.api.SpriteID;
 import net.runelite.api.VarPlayer;
@@ -307,6 +307,8 @@ public class CoxScouterExternalPlugin extends Plugin
 
 			for (String itemName : itemNames)
 			{
+				log.info("item name given: {}", itemName);
+				log.info("search: {}", net.runelite.api.gameval.ItemID.EMBERLIGHT);
 				if (itemName.equals(""))
 					continue;
 				if (itemName.equals("ice barrage"))
@@ -318,11 +320,17 @@ public class CoxScouterExternalPlugin extends Plugin
 						log.warn("Caught NumberFormatException for explicit ItemID in scouter item overlay");
 					}
 				else if (itemName.startsWith("salve"))
-					map.get(key).add(ItemID.SALVE_AMULETEI);
+					map.get(key).add(ItemID.SW_SALVE_AMULET_E);
 				else if (itemName.contains("blowpipe"))
 					map.get(key).add(ItemID.TOXIC_BLOWPIPE);
 				else if (itemName.contains("slayer helm"))
-					map.get(key).add(ItemID.SLAYER_HELMET_I);
+					map.get(key).add(ItemID.SLAYER_HELM_I);
+				else if (itemName.contains("emberlight"))
+					map.get(key).add(ItemID.EMBERLIGHT);
+				else if (itemName.contains("scorching bow"))
+					map.get(key).add(ItemID.SCORCHING_BOW);
+				else if (itemName.contains("purging staff"))
+					map.get(key).add(ItemID.PURGING_STAFF);
 				else if (itemManager.search(itemName).size() > 0)
 					map.get(key).add(itemManager.search(itemName).get(0).getId());
 				else
