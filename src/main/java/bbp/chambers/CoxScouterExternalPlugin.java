@@ -458,11 +458,17 @@ public class CoxScouterExternalPlugin extends Plugin
 		}
 	};
 
+	boolean isAtOlm()
+	{
+		return client.getLocalPlayer().getWorldView().getPlane() == 0;
+	}
+
 	boolean shouldShowOverlays()
 	{
 		if (raid == null
 				|| raid.getLayout() == null
-				|| !config.scoutOverlay())
+				|| !config.scoutOverlay()
+				|| isAtOlm())
 		{
 			return false;
 		}
