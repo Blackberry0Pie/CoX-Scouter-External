@@ -307,8 +307,6 @@ public class CoxScouterExternalPlugin extends Plugin
 
 			for (String itemName : itemNames)
 			{
-				log.info("item name given: {}", itemName);
-				log.info("search: {}", net.runelite.api.gameval.ItemID.EMBERLIGHT);
 				if (itemName.equals(""))
 					continue;
 				if (itemName.equals("ice barrage"))
