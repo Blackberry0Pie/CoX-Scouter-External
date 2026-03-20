@@ -64,7 +64,6 @@ import net.runelite.client.plugins.raids.solver.Room;
 import net.runelite.client.ui.overlay.OverlayManager;
 import net.runelite.client.util.HotkeyListener;
 import net.runelite.client.util.ImageCapture;
-import net.runelite.client.util.ImageUploadStyle;
 import net.runelite.client.util.Text;
 import net.runelite.client.party.PartyMember;
 import net.runelite.client.party.PartyService;
@@ -121,6 +120,9 @@ public class CoxScouterExternalPlugin extends Plugin
 	private CoxScouterExternalTutorialOverlay tutorialOverlay;
 
 	@Inject
+	private CoxScouterExternalBankOverlay bankOverlay;
+
+	@Inject
 	private ItemManager itemManager;
 
 	@Inject
@@ -171,6 +173,7 @@ public class CoxScouterExternalPlugin extends Plugin
 	{
 		overlayManager.add(overlay);
 		overlayManager.add(tutorialOverlay);
+		overlayManager.add(bankOverlay);
 		updateLists();
 		this.clientThread.invokeLater(this::checkRaidPresence);
 		keyManager.registerKeyListener(screenshotHotkeyListener);
@@ -181,6 +184,7 @@ public class CoxScouterExternalPlugin extends Plugin
 	{
 		overlayManager.remove(overlay);
 		overlayManager.remove(tutorialOverlay);
+		overlayManager.remove(bankOverlay);
 		inRaidChambers = false;
 		keyManager.unregisterKeyListener(screenshotHotkeyListener);
 	}
@@ -524,5 +528,32 @@ public class CoxScouterExternalPlugin extends Plugin
 		{
 			raidState = tempRaidState;
 		}
+	}
+
+	Set<Integer> getRaidRecommendedItems()
+	{
+		Set<Integer> itemIds = new HashSet<>();
+		if (raid == null || raid.getLayout() == null)
+		{
+			return itemIds;
+		}
+
+		for (Room layoutRoom : raid.getLayout().getRooms())
+		{
+			int position = layoutRoom.getPosition();
+			RaidRoom room = raid.getRoom(position);
+			if (room == null)
+			{
+				continue;
+			}
+
+			List<Integer> recommended = getRecommendedItemsList().get(room.getName().toLowerCase());
+			if (recommended != null)
+			{
+				itemIds.addAll(recommended);
+			}
+		}
+
+		return itemIds;
 	}
 }
